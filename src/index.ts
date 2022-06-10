@@ -105,8 +105,6 @@ const checkTally = (tally: StudentFacingTally): Checker => {
     errors.push('Not enough people for this "help desk" role, requires at least 1 person at 8:30');
   }
 
-  console.log(!chat.slice(1, 17).every((slot: number) => slot >= 2 && slot <= 4));
-
   if (!chat.slice(1, 17).every((slot: number) => slot >= 2 && slot <= 4)) {
     const erroneousEndTimes = evaluateRoles9am5pm('chat', chat);
     errors = [...errors, ...erroneousEndTimes];
